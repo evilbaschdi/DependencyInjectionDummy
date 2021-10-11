@@ -28,6 +28,7 @@ namespace DependencyInjectionChainDummy
 
             IServiceProvider serviceProvider = serviceCollection.BuildServiceProvider();
 
+            // ReSharper disable once SuggestVarOrType_SimpleTypes
             IReturn returnClassByDependencyInjection = serviceProvider.GetService<IReturn>();
 
             if (returnClassByDependencyInjection != null)
@@ -94,7 +95,7 @@ namespace DependencyInjectionChainDummy
             public ChainConfiguratorImplementation(IServiceCollection services)
             {
                 _services = services;
-                _types = new List<Type>();
+                _types = new();
                 _interfaceType = typeof(T);
             }
 

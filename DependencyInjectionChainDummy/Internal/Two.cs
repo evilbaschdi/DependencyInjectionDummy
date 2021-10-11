@@ -1,5 +1,6 @@
 ﻿namespace DependencyInjectionChainDummy.Internal
 {
+    // ReSharper disable once ClassNeverInstantiated.Global
     public class Two : ChainHelperFor<string, string>, INumber
     {
         public Two(INumber number)

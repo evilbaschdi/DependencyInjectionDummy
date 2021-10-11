@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 
 namespace MahAppsMetroDependencyInjectionDummy
 {
+    // ReSharper disable once RedundantExtendsListEntry
     public partial class App : Application
     {
         private readonly IHost _host;

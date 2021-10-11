@@ -3,7 +3,6 @@
                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                 xmlns:local="clr-namespace:MahAppsMetroDependencyInjectionDummy"
                  xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
                  mc:Ignorable="d"
                  xmlns:dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
@@ -12,8 +11,8 @@
     <Grid>
 
         <StackPanel>
-            <Button Name="MainWindowViewModelButton" Content="MainWindowViewModel Click" Command="{Binding MainWindowViewModelClick.Command}" />
-            <Button Name="SomeOtherInstanceButton" Content="SomeOtherInstance Click" Command="{Binding SomeOtherInstanceClick.Command}" />
+            <Button Content="MainWindowViewModel Click" Command="{Binding MainWindowViewModelClick.Command}" />
+            <Button Content="SomeOtherInstance Click" Command="{Binding SomeOtherInstanceClick.Command}" />
         </StackPanel>
     </Grid>
 </mah:MetroWindow>

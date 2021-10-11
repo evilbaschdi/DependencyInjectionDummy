@@ -8,8 +8,10 @@ namespace WpfDependencyInjectionDummy
     /// <summary>
     ///     Interaction logic for App.xaml
     /// </summary>
+    // ReSharper disable once RedundantExtendsListEntry
     public partial class App : Application
     {
+        // ReSharper disable once MemberCanBePrivate.Global
         public IServiceProvider ServiceProvider { get; private set; }
 
 
