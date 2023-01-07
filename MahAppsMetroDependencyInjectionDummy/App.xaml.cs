@@ -1,74 +1,71 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
+using EvilBaschdi.CoreExtended;
 using JetBrains.Annotations;
 using MahApps.Metro.Controls.Dialogs;
 using MahAppsMetroDependencyInjectionDummy.Internal;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace MahAppsMetroDependencyInjectionDummy
+namespace MahAppsMetroDependencyInjectionDummy;
+
+// ReSharper disable once RedundantExtendsListEntry
+public partial class App : Application
 {
-    // ReSharper disable once RedundantExtendsListEntry
-    public partial class App : Application
+    private readonly IHost _host;
+
+    /// <inheritdoc />
+    public App()
     {
-        private readonly IHost _host;
+        _host = Host.CreateDefaultBuilder()
+                    .ConfigureServices((_, services) => { ConfigureServices(services); })
+                    .Build();
 
-        /// <inheritdoc />
-        public App()
+        ServiceProvider = _host.Services;
+    }
+
+    /// <summary>
+    ///     ServiceProvider for DependencyInjection
+    /// </summary>
+    public static IServiceProvider ServiceProvider { get; private set; }
+
+    /// <inheritdoc />
+    protected override async void OnStartup(StartupEventArgs e)
+    {
+        await _host.StartAsync();
+
+        var mainWindow = ServiceProvider.GetRequiredService<MainWindow>();
+
+        mainWindow.Show();
+    }
+
+    private static void ConfigureServices([NotNull] IServiceCollection services)
+    {
+        if (services == null)
         {
-            _host = Host.CreateDefaultBuilder()
-                        .ConfigureServices((_, services) => { ConfigureServices(services); })
-                        .Build();
-
-            ServiceProvider = _host.Services;
+            throw new ArgumentNullException(nameof(services));
         }
 
-        /// <summary>
-        ///     ServiceProvider for DependencyInjection
-        /// </summary>
-        public static IServiceProvider ServiceProvider { get; private set; }
+        services.AddSingleton(_ => DialogCoordinator.Instance);
+        services.AddScoped<IDummyInterface, DummyClass>();
+        services.AddScoped<ISomeOtherInterface, SomeOtherClass>();
+        services.AddSingleton<IApplicationStyle>(new ApplicationStyle(true));
+        services.AddSingleton<MainWindowViewModel>();
+        services.AddTransient(typeof(MainWindow));
+    }
 
-
-        /// <inheritdoc />
-        protected override async void OnStartup(StartupEventArgs e)
+    /// <inheritdoc />
+    protected override async void OnExit([NotNull] ExitEventArgs e)
+    {
+        if (e == null)
         {
-            await _host.StartAsync();
-
-
-            var mainWindow = ServiceProvider.GetRequiredService<MainWindow>();
-
-            mainWindow.Show();
+            throw new ArgumentNullException(nameof(e));
         }
 
-        private void ConfigureServices([NotNull] IServiceCollection services)
+        using (_host)
         {
-            if (services == null)
-            {
-                throw new ArgumentNullException(nameof(services));
-            }
-
-            services.AddSingleton(_ => DialogCoordinator.Instance);
-            services.AddScoped<IDummyInterface, DummyClass>();
-            services.AddScoped<ISomeOtherInterface, SomeOtherClass>();
-
-            services.AddSingleton<MainWindowViewModel>();
-            services.AddTransient(typeof(MainWindow));
+            await _host.StopAsync(TimeSpan.FromSeconds(5));
         }
 
-        /// <inheritdoc />
-        protected override async void OnExit([NotNull] ExitEventArgs e)
-        {
-            if (e == null)
-            {
-                throw new ArgumentNullException(nameof(e));
-            }
-
-            using (_host)
-            {
-                await _host.StopAsync(TimeSpan.FromSeconds(5));
-            }
-
-            base.OnExit(e);
-        }
+        base.OnExit(e);
     }
 }

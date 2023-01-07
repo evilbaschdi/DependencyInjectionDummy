@@ -1,6 +1,6 @@
 ﻿using EvilBaschdi.Core;
 
-namespace MahAppsMetroDependencyInjectionDummy.Internal;
+namespace WpfDependencyInjectionDummy.Internal;
 
 public interface IDummyInterface : IString
 {

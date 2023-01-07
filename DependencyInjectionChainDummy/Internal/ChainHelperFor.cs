@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace DependencyInjectionChainDummy.Internal
+﻿namespace DependencyInjectionChainDummy.Internal
 {
     /// <inheritdoc />
     public abstract class ChainHelperFor<TIn, TOut> : IChainHelperFor<TIn, TOut>
@@ -28,7 +26,6 @@ namespace DependencyInjectionChainDummy.Internal
 
         /// <inheritdoc />
         public IChainHelperFor<TIn, TOut> NextChain { get; }
-
 
         /// <inheritdoc />
         public abstract bool AmIResponsible { get; }

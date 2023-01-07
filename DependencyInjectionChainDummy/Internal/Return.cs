@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace DependencyInjectionChainDummy.Internal
+﻿namespace DependencyInjectionChainDummy.Internal
 {
     public class Return : IReturn
     {

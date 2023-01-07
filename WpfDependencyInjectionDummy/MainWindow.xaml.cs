@@ -1,25 +1,24 @@
 ﻿using System.Windows;
 using WpfDependencyInjectionDummy.Internal;
 
-namespace WpfDependencyInjectionDummy
+namespace WpfDependencyInjectionDummy;
+
+/// <summary>
+///     Interaction logic for MainWindow.xaml
+/// </summary>
+// ReSharper disable once RedundantExtendsListEntry
+public partial class MainWindow : Window
 {
-    /// <summary>
-    ///     Interaction logic for MainWindow.xaml
-    /// </summary>
-    // ReSharper disable once RedundantExtendsListEntry
-    public partial class MainWindow : Window
+    private readonly IDummyInterface _dummyInterface;
+
+    public MainWindow(IDummyInterface dummyInterface)
     {
-        private readonly IDummyInterface _dummyInterface;
+        InitializeComponent();
+        _dummyInterface = dummyInterface;
+    }
 
-        public MainWindow(IDummyInterface dummyInterface)
-        {
-            InitializeComponent();
-            _dummyInterface = dummyInterface;
-        }
-
-        private void DummyButtonOnClick(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show(_dummyInterface.Value);
-        }
+    private void DummyButtonOnClick(object sender, RoutedEventArgs e)
+    {
+        MessageBox.Show(_dummyInterface.Value);
     }
 }

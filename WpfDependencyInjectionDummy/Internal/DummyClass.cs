@@ -1,4 +1,4 @@
-﻿namespace MahAppsMetroDependencyInjectionDummy.Internal;
+﻿namespace WpfDependencyInjectionDummy.Internal;
 
 public class DummyClass : IDummyInterface
 {

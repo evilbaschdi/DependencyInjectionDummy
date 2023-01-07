@@ -1,6 +1,8 @@
-﻿namespace DependencyInjectionChainDummy.Internal
+﻿using EvilBaschdi.Core;
+
+namespace DependencyInjectionChainDummy.Internal
 {
-    public interface IReturn : IValue<string>
+    public interface IReturn : IString
     {
     }
 }
