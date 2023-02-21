@@ -1,7 +1,6 @@
-﻿namespace DependencyInjectionChainDummy.Internal
+﻿namespace DependencyInjectionChainDummy.Internal;
+
+public class DemoClass : IDemoInterface
 {
-    public class DemoClass : IDemoInterface
-    {
-        public string Value => "Das ist ein Demowert";
-    }
+    public string Value => "Das ist ein Demowert";
 }

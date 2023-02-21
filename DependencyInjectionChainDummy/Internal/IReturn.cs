@@ -1,8 +1,7 @@
 ﻿using EvilBaschdi.Core;
 
-namespace DependencyInjectionChainDummy.Internal
+namespace DependencyInjectionChainDummy.Internal;
+
+public interface IReturn : IString
 {
-    public interface IReturn : IString
-    {
-    }
 }

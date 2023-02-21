@@ -1,6 +1,6 @@
-﻿using EvilBaschdi.CoreExtended;
-using EvilBaschdi.CoreExtended.Mvvm.ViewModel;
-using EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command;
+﻿using EvilBaschdi.Core.Wpf;
+using EvilBaschdi.Core.Wpf.Mvvm.ViewModel;
+using EvilBaschdi.Core.Wpf.Mvvm.ViewModel.Command;
 using JetBrains.Annotations;
 using MahApps.Metro.Controls.Dialogs;
 using MahAppsMetroDependencyInjectionDummy.Internal;
@@ -44,26 +44,5 @@ public class MainWindowViewModel : ApplicationStyleViewModel
     {
         _dialogCoordinator.ShowMessageAsync(this, "MainWindowViewModel Click",
             $"Current DateTime {_dummyInterface.Value}");
-    }
-}
-
-public interface ISomeOtherInterface
-{
-    void SomeOtherInstanceClickCommand(object context);
-}
-
-public class SomeOtherClass : ISomeOtherInterface
-{
-    private readonly IDialogCoordinator _dialogCoordinator;
-
-    public SomeOtherClass([NotNull] IDialogCoordinator dialogCoordinator)
-    {
-        _dialogCoordinator = dialogCoordinator ?? throw new ArgumentNullException(nameof(dialogCoordinator));
-    }
-
-    public void SomeOtherInstanceClickCommand(object context)
-    {
-        _dialogCoordinator.ShowMessageAsync(context, "SomeOtherInstance Click",
-            "some stupid content");
     }
 }

@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-using EvilBaschdi.CoreExtended;
+using EvilBaschdi.Core.Wpf;
 using JetBrains.Annotations;
 using MahApps.Metro.Controls.Dialogs;
 using MahAppsMetroDependencyInjectionDummy.Internal;
