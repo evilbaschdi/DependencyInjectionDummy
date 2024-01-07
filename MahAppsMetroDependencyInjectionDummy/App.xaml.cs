@@ -48,7 +48,8 @@ public partial class App : Application
         services.AddSingleton(_ => DialogCoordinator.Instance);
         services.AddScoped<IDummyInterface, DummyClass>();
         services.AddScoped<ISomeOtherInterface, SomeOtherClass>();
-        services.AddSingleton<IApplicationStyle>(new ApplicationStyle(true));
+        services.AddSingleton<IApplicationLayout, ApplicationLayout>();
+        services.AddSingleton<IApplicationStyle, ApplicationStyle>();
         services.AddSingleton<MainWindowViewModel>();
         services.AddTransient(typeof(MainWindow));
     }

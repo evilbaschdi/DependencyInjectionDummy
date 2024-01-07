@@ -7,7 +7,7 @@ using MahAppsMetroDependencyInjectionDummy.Internal;
 
 namespace MahAppsMetroDependencyInjectionDummy;
 
-public class MainWindowViewModel : ApplicationStyleViewModel
+public class MainWindowViewModel : ApplicationLayoutViewModel
 {
     private readonly IDialogCoordinator _dialogCoordinator;
     private readonly IDummyInterface _dummyInterface;
@@ -15,9 +15,10 @@ public class MainWindowViewModel : ApplicationStyleViewModel
     public MainWindowViewModel([NotNull] IDialogCoordinator dialogCoordinator,
                                [NotNull] IDummyInterface dummyInterface,
                                [NotNull] ISomeOtherInterface someOtherInterface,
-                               IApplicationStyle applicationStyle
+                               [NotNull] IApplicationLayout applicationLayout,
+                               [NotNull] IApplicationStyle applicationStyle
     )
-        : base(applicationStyle)
+        : base(applicationLayout, applicationStyle, true, false)
     {
         _dialogCoordinator = dialogCoordinator ?? throw new ArgumentNullException(nameof(dialogCoordinator));
         _dummyInterface = dummyInterface ?? throw new ArgumentNullException(nameof(dummyInterface));
