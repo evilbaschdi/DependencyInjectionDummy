@@ -4,6 +4,4 @@ using Microsoft.Extensions.DependencyInjection;
 namespace DependencyInjectionChainDummy;
 
 /// <inheritdoc />
-public interface IConfigureChain : IRunFor<IServiceCollection>
-{
-}
+public interface IConfigureChain : IRunFor<IServiceCollection>;

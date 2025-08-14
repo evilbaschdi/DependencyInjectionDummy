@@ -2,6 +2,4 @@
 
 namespace MahAppsMetroDependencyInjectionDummy.Internal;
 
-public interface IDummyInterface : IString
-{
-}
+public interface IDummyInterface : IString;

@@ -2,6 +2,4 @@
 
 namespace DependencyInjectionChainDummy.Internal;
 
-public interface IDemoInterface : IString
-{
-}
+public interface IDemoInterface : IString;

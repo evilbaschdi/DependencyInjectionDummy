@@ -21,15 +21,9 @@ public partial class MainWindow : MetroWindow
 
     private void MainWindowLoaded(object sender, RoutedEventArgs e)
     {
-        if (sender == null)
-        {
-            throw new ArgumentNullException(nameof(sender));
-        }
+        ArgumentNullException.ThrowIfNull(sender);
 
-        if (e == null)
-        {
-            throw new ArgumentNullException(nameof(e));
-        }
+        ArgumentNullException.ThrowIfNull(e);
 
         DataContext = ActivatorUtilities.GetServiceOrCreateInstance(_serviceProvider, typeof(MainWindowViewModel));
     }

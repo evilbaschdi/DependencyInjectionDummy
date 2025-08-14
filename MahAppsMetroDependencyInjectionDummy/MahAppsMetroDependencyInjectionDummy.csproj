@@ -2,19 +2,20 @@
 
 	<PropertyGroup>
 		<OutputType>WinExe</OutputType>
-		<TargetFramework>net8.0-windows</TargetFramework>
+		<TargetFramework>net9.0-windows</TargetFramework>
 		<UseWPF>true</UseWPF>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 		<ImplicitUsings>enable</ImplicitUsings>
 	</PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="EvilBaschdi.Core" />
 		<PackageReference Include="EvilBaschdi.Core.Wpf" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" />
 		<PackageReference Include="Microsoft.Extensions.Hosting" />
 		<PackageReference Include="WpfAnalyzers">
 			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
 		</PackageReference>
 	</ItemGroup>
 

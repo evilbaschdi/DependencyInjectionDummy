@@ -2,6 +2,4 @@
 
 namespace WpfDependencyInjectionDummy.Internal;
 
-public interface IDummyInterface : IString
-{
-}
+public interface IDummyInterface : IString;

@@ -10,8 +10,5 @@ public class Two : ChainHelperFor<string, string>, INumber
 
     public override bool AmIResponsible => Input.Equals("Two");
 
-    protected override string InnerValueFor(string input)
-    {
-        return "2";
-    }
+    protected override string InnerValueFor(string input) => "2";
 }

@@ -1,5 +1,5 @@
 ﻿using DependencyInjectionChainDummy.Internal;
-using EvilBaschdi.DependencyInjection;
+using EvilBaschdi.Core.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DependencyInjectionChainDummy;
@@ -9,10 +9,7 @@ public class ConfigureChain : IConfigureChain
     /// <inheritdoc />
     public void RunFor(IServiceCollection services)
     {
-        if (services == null)
-        {
-            throw new ArgumentNullException(nameof(services));
-        }
+        ArgumentNullException.ThrowIfNull(services);
 
         //services.AddChained<INumber>(typeof(One));
         //services.AddChained<INumber>(typeof(Two));
