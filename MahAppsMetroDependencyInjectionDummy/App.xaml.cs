@@ -40,10 +40,7 @@ public partial class App : Application
 
     private static void ConfigureServices([NotNull] IServiceCollection services)
     {
-        if (services == null)
-        {
-            throw new ArgumentNullException(nameof(services));
-        }
+        ArgumentNullException.ThrowIfNull(services);
 
         services.AddSingleton(_ => DialogCoordinator.Instance);
         services.AddScoped<IDummyInterface, DummyClass>();
@@ -57,10 +54,7 @@ public partial class App : Application
     /// <inheritdoc />
     protected override async void OnExit([NotNull] ExitEventArgs e)
     {
-        if (e == null)
-        {
-            throw new ArgumentNullException(nameof(e));
-        }
+        ArgumentNullException.ThrowIfNull(e);
 
         using (_host)
         {

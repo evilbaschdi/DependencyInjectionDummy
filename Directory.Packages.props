@@ -4,11 +4,11 @@
     <CentralPackageTransitivePinningEnabled>false</CentralPackageTransitivePinningEnabled>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="EvilBaschdi.Core" Version="2025.9.16.16" />
-    <PackageVersion Include="EvilBaschdi.Core.Wpf" Version="2025.10.16.16" />
-    <PackageVersion Include="EvilBaschdi.Core.DependencyInjection" Version="2025.10.15.5" />
-    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="9.0.9" />
-    <PackageVersion Include="Microsoft.Extensions.Hosting" Version="9.0.9" />
+    <PackageVersion Include="EvilBaschdi.Core" Version="2025.12.9.20" />
+    <PackageVersion Include="EvilBaschdi.Core.Wpf" Version="2026.1.6.10" />
+    <PackageVersion Include="EvilBaschdi.Core.DependencyInjection" Version="2026.1.27.19" />
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="10.0.2" />
+    <PackageVersion Include="Microsoft.Extensions.Hosting" Version="10.0.2" />
     <PackageVersion Include="WpfAnalyzers" Version="4.1.1" />
   </ItemGroup>
 </Project>
