@@ -1,4 +1,4 @@
-﻿namespace DependencyInjectionChainDummy.Internal;
+namespace DependencyInjectionChainDummy.Internal;
 
 public interface IValue<out T>
 {

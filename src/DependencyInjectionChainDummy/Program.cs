@@ -1,4 +1,4 @@
-﻿using DependencyInjectionChainDummy.Internal;
+using DependencyInjectionChainDummy.Internal;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DependencyInjectionChainDummy;

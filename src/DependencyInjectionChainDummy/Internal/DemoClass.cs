@@ -1,4 +1,4 @@
-﻿namespace DependencyInjectionChainDummy.Internal;
+namespace DependencyInjectionChainDummy.Internal;
 
 public class DemoClass : IDemoInterface
 {

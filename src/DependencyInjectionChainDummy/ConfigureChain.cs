@@ -1,4 +1,4 @@
-﻿using DependencyInjectionChainDummy.Internal;
+using DependencyInjectionChainDummy.Internal;
 using EvilBaschdi.Core.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 

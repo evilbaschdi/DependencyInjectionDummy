@@ -1,4 +1,4 @@
-﻿namespace DependencyInjectionChainDummy.Internal;
+namespace DependencyInjectionChainDummy.Internal;
 
 /// <inheritdoc />
 public abstract class ChainHelperFor<TIn, TOut> : IChainHelperFor<TIn, TOut>
