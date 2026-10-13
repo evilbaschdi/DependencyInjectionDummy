@@ -7,6 +7,7 @@ public abstract class ChainHelperFor<TIn, TOut> : IChainHelperFor<TIn, TOut>
     /// </summary>
     // ReSharper disable once MemberCanBePrivate.Global
     // ReSharper disable once NotAccessedField.Global
+    // ReSharper disable once InconsistentNaming
     protected TIn Input;
 
     /// <summary>
